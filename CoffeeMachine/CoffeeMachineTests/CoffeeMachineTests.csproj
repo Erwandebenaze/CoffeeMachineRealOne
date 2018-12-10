@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{480B5686-D14B-400D-A9D7-4D8F6CF224E5}</ProjectGuid>
+    <ProjectGuid>{5AA905BB-7AD6-44DD-BFFE-C05D5079466F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoffeeMachine.Tests</RootNamespace>
-    <AssemblyName>CoffeeMachine.Tests</AssemblyName>
+    <RootNamespace>CoffeeMachineTests</RootNamespace>
+    <AssemblyName>CoffeeMachineTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -60,18 +60,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MakingDrinksTests.cs" />
-    <Compile Include="GoingIntoBusinessTests.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CoffeeMachine\CoffeeMachine.csproj">
-      <Project>{06828ed3-cdf7-45ae-9b70-bf250e6eb1cb}</Project>
-      <Name>CoffeeMachine</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
