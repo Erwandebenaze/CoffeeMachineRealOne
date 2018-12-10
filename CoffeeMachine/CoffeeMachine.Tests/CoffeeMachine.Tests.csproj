@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtratHotTests.cs" />
     <Compile Include="MakingDrinksTests.cs" />
     <Compile Include="GoingIntoBusinessTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

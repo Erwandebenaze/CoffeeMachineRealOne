@@ -13,7 +13,7 @@ namespace CoffeeMachine
         bool _notEnoughtMoney = false;
         Drink _drinkSelected;
 
-        public void SelectDrink(Drink drink)
+        public void SelectDrink(Drink drink, bool isExtratHot = false)
         {
             _drinkSelected = drink;
             switch (drink)
@@ -31,8 +31,17 @@ namespace CoffeeMachine
                     _message = "M";
                     _isMessage = true;
                     break;
+                case Drink.OrangeJuice:
+                    _message = "O";
+                    _isMessage = true;
+                    break;
                 default:
                     break;
+            }
+
+            if (isExtratHot)
+            {
+                _message += "h";
             }
         }
 
@@ -73,6 +82,13 @@ namespace CoffeeMachine
                     if (paid < 0.5)
                     {
                         missed = paid - 0.5;
+                        _notEnoughtMoney = true;
+                    }
+                    break;
+                case Drink.OrangeJuice:
+                    if (paid < 0.6)
+                    {
+                        missed = paid - 0.6;
                         _notEnoughtMoney = true;
                     }
                     break;

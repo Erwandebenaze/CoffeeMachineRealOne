@@ -11,6 +11,7 @@ namespace CoffeeMachine
         Coffee,
         Tea,
         Chocolate,
+        OrangeJuice,
         Message
     }
 }
