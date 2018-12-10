@@ -13,7 +13,18 @@ namespace CoffeeMachine
         bool _notEnoughtMoney = false;
         Drink _drinkSelected;
         string _drinkString = String.Empty;
+        IBeverageQuantityChecker _beverageQuantityChecker;
+        IEmailNotifier _emailNotifier;
 
+        public CoffeeMachine()
+        {
+
+        }
+        public CoffeeMachine(IEmailNotifier emailNotifier, IBeverageQuantityChecker beverageQuantityChecker)
+        {
+            _beverageQuantityChecker = beverageQuantityChecker;
+            _emailNotifier = emailNotifier;
+        }
 
         public void SelectDrink(Drink drink, bool isExtratHot = false)
         {
@@ -109,6 +120,13 @@ namespace CoffeeMachine
                 _message = "It misses " + -missed + " euro to order your drink";
             } else
             {
+                if(_beverageQuantityChecker != null)
+                {
+                    if (_beverageQuantityChecker.IsEmpty(_drinkString))
+                    {
+                        _emailNotifier.NotifyMissingDrink(_drinkString);
+                    }
+                }
                 CoffeeMachineReporter.MoneyEarned += paid;
                 CoffeeMachineReporter.DrinksTaken += _drinkString + "/";
             }

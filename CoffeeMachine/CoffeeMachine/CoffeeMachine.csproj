@@ -53,6 +53,8 @@
     <Compile Include="CoffeeMachine.cs" />
     <Compile Include="CoffeeMachineReporter.cs" />
     <Compile Include="Drink.cs" />
+    <Compile Include="IBeverageQuantityChecker.cs" />
+    <Compile Include="IEmailNotifier.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
