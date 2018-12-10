@@ -12,6 +12,8 @@ namespace CoffeeMachine
         bool _isMessage = false;
         bool _notEnoughtMoney = false;
         Drink _drinkSelected;
+        string _drinkString = String.Empty;
+
 
         public void SelectDrink(Drink drink, bool isExtratHot = false)
         {
@@ -42,6 +44,12 @@ namespace CoffeeMachine
             if (isExtratHot)
             {
                 _message += "h";
+            }
+
+            if(drink != Drink.Message)
+            {
+                _drinkString = drink.ToString() + (isExtratHot ? " extra hot" : "");
+                
             }
         }
 
@@ -99,6 +107,10 @@ namespace CoffeeMachine
             if (_notEnoughtMoney)
             {
                 _message = "It misses " + -missed + " euro to order your drink";
+            } else
+            {
+                CoffeeMachineReporter.MoneyEarned += paid;
+                CoffeeMachineReporter.DrinksTaken += _drinkString + "/";
             }
         }
 
