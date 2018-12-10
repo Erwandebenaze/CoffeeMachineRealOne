@@ -201,7 +201,7 @@ namespace CoffeeMachine.Tests
         public void ZCoffeeMachineReporter_print_report()
         {
             // Le test ne passe pas mais je vois pourtant le même texte.
-            Assert.AreEqual("Commande : Tea\nCommande : Tea extra hot\nCommande : Chocolate\nCommande : Chocolate extra hot\nCommande : Coffee\nCommande : Coffee extra hot\n\nGain : 4", CoffeeMachineReporter.PrintReport());
+            Assert.AreEqual("Commande : Tea\nCommande : Tea extra hot\nCommande : Chocolate\nCommande : Chocolate extra hot\nCommande : Coffee\nCommande : Coffee extra hot\n\nGain : 6", CoffeeMachineReporter.PrintReport());
         }
     }
 }
